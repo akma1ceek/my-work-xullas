@@ -64,9 +64,46 @@ p {
     text-transform: capitalize;
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
 /* header Start */
 .header__nav {
     margin-bottom: 30px;
+    position: relative;
+}
+
+.header__nav::before {
+    content: '';
+    position: absolute;
+    width: 3.5vw;
+    height: 3.5vw;
+    left: 243.95px;
+    top: 32px;
+    border: .3vw solid #790FF1;
+    border-radius: 50%;
+    animation: rotate 3s linear infinite alternate;
+    z-index: -1;
+}
+
+.header__nav::after {
+    content: '';
+    position: absolute;
+    width: 4vw;
+    height: 4vw;
+    left: 73.66px;
+    top: 92.64px;
+
+    border: .3vw solid #9297EF;
+    animation: rotate 3s linear infinite alternate;
+    z-index: -1;
 }
 
 .header__list {
@@ -135,6 +172,33 @@ p {
     transform: rotate(45deg);
 }
 
+.header__content {
+    position: relative;
+}
+
+.header__content::before {
+    content: '';
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    right: 5%;
+    top: 10%;
+    z-index: -1;
+    border: .3vw solid #9297EF;
+    animation: rotate 3s linear infinite alternate;
+}
+
+.header__content::after {
+    content: '';
+    position: absolute;
+    width: 4vw;
+    height: 4vw;
+    right: 15%;
+    top: 70%;
+    border: .3vw solid #7177F1;
+    animation: rotate 3s linear infinite alternate;
+}
+
 .header__content-subtitle {
     font-size: 24px;
     font-weight: 600;
@@ -148,12 +212,15 @@ p {
     width: 100%;
     margin: 0 auto 50px;
 }
+
 .header__tech-card:first-of-type .header__tech-brand {
     color: #e44f26;
 }
+
 .header__tech-card:nth-of-type(2) .header__tech-brand {
     color: #1572b6
 }
+
 .header__tech-card:last-of-type .header__tech-brand {
     color: #790FF1
 }
@@ -187,4 +254,67 @@ p {
 .header__carousel-img {
     max-height: 500px;
 }
+
 /* header end */
+
+/* About start */
+
+.about {
+    position: relative;
+}
+.about::after {
+    content: url(../img/svg/figure_1.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.about__work {
+    position: relative;
+    max-width: 190px;
+    width: 100%;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 24px 0;
+    top: 90px;
+    left: -15%;
+}
+
+.about__ball {
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0fdac2;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.about__desk {
+    box-shadow: 0px 0px 5px 3px rgba(113, 119, 241, 0.15);
+    border-radius: 8px;
+    background: var(--body);
+    padding: 30px;
+}
+
+.about__desc-txt {
+    font-size: 18px;
+    line-height: 150%;
+    color: var(--txt);
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+.about__desk-btn {
+    font-size: 18px;
+    max-width: 190px;
+    width: 100%;
+    text-transform: uppercase;
+}
+/* About end */
