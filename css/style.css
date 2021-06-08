@@ -262,10 +262,11 @@ p {
 .about {
     position: relative;
 }
+
 .about::after {
     content: url(../img/svg/figure_1.svg);
     position: absolute;
-    top: 0;
+    top: -70%;
     right: 0;
     z-index: -1;
 }
@@ -317,4 +318,83 @@ p {
     width: 100%;
     text-transform: uppercase;
 }
+
 /* About end */
+
+/* capabilities start */
+
+.capabilities {
+    padding: 80px 0;
+}
+
+.capabilities {
+    margin-bottom: 30px;
+}
+
+.accordion__button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 900;
+    border: none;
+    padding: 15px 30px;
+    background: var(--btn);
+    color: #fff;
+    transition: 0.4s;
+    position: relative;
+}
+
+.accordion {
+    box-shadow: 0px 0px 5px 3px rgba(113, 119, 241, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.accordion__button.collapsed {
+    background: var(--body);
+    color: var(--title);
+}
+
+.accordion__body {
+    font-size: 18px;
+    line-height: 150%;
+    background: var(--btn);
+    padding: 30px;
+}
+
+.accordion__icon-down {
+    transition: 0.2s;
+    font-size: 25px;
+}
+
+.accordion__item.collapsed .accordion__icon-down {
+    transform: rotate(180deg);
+}
+
+.accordion__item:first-of-type .accordion__button.collapsed .accordion__brand {
+    color: #E44F26;
+}
+
+.accordion__item:nth-of-type(2) .accordion__button.collapsed .accordion__brand {
+    color: #1572B6;
+}
+
+.accordion__item:nth-of-type(3) .accordion__button.collapsed .accordion__brand {
+    color: #790FF1;
+}
+
+.accordion__item:nth-of-type(1) .accordion__button.collapsed::after,
+.accordion__item:nth-of-type(2) .accordion__button.collapsed::after {
+    content: '';
+    position: absolute;
+    width: 95%;
+    height: 1px;
+    background: #ddd;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%)
+}
+/* capabilities end */
